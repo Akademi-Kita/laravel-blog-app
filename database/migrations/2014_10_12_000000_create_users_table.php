@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->date('birthdate');
             $table->string('birth_province');
             $table->string('organization');
+            $table->enum('permission', [0, 1]);
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

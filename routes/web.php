@@ -13,10 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+// return view('welcome');
+// });
 
-\Illuminate\Support\Facades\Auth::routes();
+// \Illuminate\Support\Facades\Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::view('/', 'vue');
+
+Route::get("/{any}", function () {
+    return view('vue');
+})->where('any', '.*');
