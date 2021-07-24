@@ -25,6 +25,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "@tailwindcss/aspect-ratio": "^0.2.0",
         "vue-responsive": "^1.1.0"
     }
 }

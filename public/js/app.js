@@ -144,6 +144,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -197,9 +206,7 @@ __webpack_require__.r(__webpack_exports__);
     border: Boolean
   },
   data: function data() {
-    return {
-      border: this.border
-    };
+    return {};
   }
 });
 
@@ -352,7 +359,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".custom-container {\n  row-gap: 10px;\n}\n.headline {\n  flex-basis: 60%;\n  border-radius: 0.5vw;\n}\n.custom-container > div {\n  height: 60vh;\n}\n.populars {\n  flex-basis: 40%;\n}\n.title-headline {\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n  top: -100%;\n  transform: translateY(50%);\n  box-shadow: 3px 1px 15px 1px rgba(130, 130, 130, 0.5);\n}\n.popular-btn {\n  background-color: #10bb56;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n}\n.headline > div > img {\n  height: 100%;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".custom-container {\n  row-gap: 10px;\n}\n.headline {\n  flex-basis: 60%;\n  border-radius: 0.5vw;\n  overflow: hidden;\n}\n.populars {\n  flex-basis: 40%;\n  overflow: auto;\n}\n.custom-container > div {\n  height: 60vh;\n}\n.title-headline {\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n  top: -100%;\n  transform: translateY(50%);\n  box-shadow: 3px 1px 15px 1px rgba(130, 130, 130, 0.5);\n}\n.popular-btn {\n  background-color: #10bb56;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n}\n.headline > div {\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n}\n.headline > div > img {\n  height: 100%;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -376,7 +383,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".popular-div > :first-child {\n  flex-grow: 1;\n}\n.popular-div div img {\n  height: 10vh;\n  width: 15vw;\n}\n.popular-div > :last-child {\n  flex-grow: 3;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* md -> to up */\n@media (min-width: 768px) {\n.popular-div > div:first-child {\n    flex-basis: 35%;\n}\n.popular-div > div:last-child {\n    flex-basis: 65%;\n}\n}\n.popular-div > div:first-child {\n  flex-basis: 35%;\n}\n.popular-div div img {\n  height: 100%;\n  width: 100%;\n}\n.popular-div > div:last-child {\n  flex-basis: 65%;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1234,7 +1241,7 @@ var render = function() {
       "div",
       {
         staticClass:
-          "custom-container mt-14 inline-flex lg:flex-row flex-col gap-4 lg:gap-14"
+          "custom-container mt-14 inline-flex flex-col lg:flex-row  gap-4 lg:gap-14"
       },
       [
         _c(
@@ -1353,23 +1360,27 @@ var render = function() {
     "div",
     {
       class: this.border
-        ? "inline-flex flex-row popular-div gap-6 py-8 border-b"
-        : "inline-flex flex-row popular-div gap-6 py-8 "
+        ? "inline-flex flex-row popular-div gap-4 md:gap-6 py-8 border-b"
+        : "inline-flex flex-row popular-div gap-4 md:gap-6 py-8 "
     },
     [
       _vm._m(0),
       _vm._v(" "),
-      _c("div", { staticClass: "flex flex-col justify-around" }, [
-        _c("div", { style: { color: "#5D6370" } }, [
-          _vm._v("\n            Vendas\n        ")
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _vm._v(
-            "\n            Lorem ipsum, dolor sit amet consectetur adipisicing elit.\n            Consequatur, consequuntur.\n        "
-          )
-        ])
-      ])
+      _c(
+        "div",
+        { staticClass: "flex flex-col justify-around md:text-sm text-xs" },
+        [
+          _c("div", { style: { color: "#5D6370" } }, [
+            _vm._v("\n            Vendas\n        ")
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _vm._v(
+              "\n            Lorem ipsum, dolor sit amet consectetur adipisicing elit.\n            Consequatur, consequuntur.\n        "
+            )
+          ])
+        ]
+      )
     ]
   )
 }
@@ -1380,7 +1391,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", [
       _c("img", {
-        staticClass: "rounded-md",
+        staticClass: "rounded-md w-full",
         attrs: { src: "/assets/headline.jpeg", alt: "" }
       })
     ])

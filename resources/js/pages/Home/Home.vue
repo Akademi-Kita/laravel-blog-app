@@ -1,11 +1,17 @@
 <template>
     <div>
-        <div class="custom-container mt-14 inline-flex lg:flex-row flex-col gap-4 lg:gap-14">
+        <div
+            class="custom-container mt-14 inline-flex flex-col lg:flex-row  gap-4 lg:gap-14"
+        >
             <div
                 class="headline bg-no-repeat bg-cover flex flex-col justify-center"
             >
                 <div>
-                    <img src="/assets/headline.jpeg" alt="" class="rounded-md"/>
+                    <img
+                        src="/assets/headline.jpeg"
+                        alt=""
+                        class="rounded-md"
+                    />
                 </div>
                 <div class="flex justify-center">
                     <div
@@ -15,7 +21,10 @@
                             <span>Vendas</span>
                             <span></span>
                         </div>
-                        <div class="text-sm md:text-xl" :style="{ color: '#5D6370' }">
+                        <div
+                            class="text-sm md:text-xl"
+                            :style="{ color: '#5D6370' }"
+                        >
                             Lorem ipsum, dolor sit amet consectetur adipisicing
                             elit. Alias, nulla.
                         </div>
@@ -58,14 +67,15 @@ export default {
 .headline {
     flex-basis: 60%;
     border-radius: 0.5vw;
+    overflow: hidden;
+}
+.populars {
+    flex-basis: 40%;
+    overflow: auto;
 }
 
 .custom-container > div {
     height: 60vh;
-}
-
-.populars {
-    flex-basis: 40%;
 }
 
 .title-headline {
@@ -80,8 +90,11 @@ export default {
     width: fit-content;
 }
 
+.headline > div {
+    height: fit-content;
+}
+
 .headline > div > img {
     height: 100%;
 }
-
 </style>

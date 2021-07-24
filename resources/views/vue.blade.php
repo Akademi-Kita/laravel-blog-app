@@ -12,11 +12,11 @@
 
 <body>
     <div id="app">
-        <header v-responsive.md.lg.xl class="border-b-2 px-10 xl:px-64">
+        <header v-responsive.md.lg.xl class="border-b-2 px-10 lg:px-24 xl:px-64">
             <header-component />
         </header>
-        <router-view class="px-10 xl:px-64"></router-view>
-        <footer-component class="px-10 xl:px-64" />
+        <router-view class="px-10 lg:px-24 xl:px-64"></router-view>
+        <footer-component class="px-10 lg:px-24 xl:px-64" />
     </div>
 </body>
 

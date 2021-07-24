@@ -2,14 +2,14 @@
     <div
         :class="
             this.border
-                ? 'inline-flex flex-row popular-div gap-6 py-8 border-b'
-                : 'inline-flex flex-row popular-div gap-6 py-8 '
+                ? 'inline-flex flex-row popular-div gap-4 md:gap-6 py-8 border-b'
+                : 'inline-flex flex-row popular-div gap-4 md:gap-6 py-8 '
         "
     >
         <div>
-            <img src="/assets/headline.jpeg" alt="" class="rounded-md" />
+            <img src="/assets/headline.jpeg" alt="" class="rounded-md w-full" />
         </div>
-        <div class="flex flex-col justify-around">
+        <div class="flex flex-col justify-around md:text-sm text-xs">
             <div :style="{ color: '#5D6370' }">
                 Vendas
             </div>
@@ -27,24 +27,32 @@ export default {
         border: Boolean
     },
     data() {
-        return {
-            border: this.border
-        };
+        return {};
     }
 };
 </script>
 
 <style>
-.popular-div > :first-child {
-    flex-grow: 1;
+/* md -> to up */
+@media (min-width: 768px) {
+    .popular-div > div:first-child {
+        flex-basis: 35%;
+    }
+    .popular-div > div:last-child {
+        flex-basis: 65%;
+    }
+}
+
+.popular-div > div:first-child {
+    flex-basis: 35%;
 }
 
 .popular-div div img {
-    height: 10vh;
-    width: 15vw;
+    height: 100%;
+    width: 100%;
 }
 
-.popular-div > :last-child {
-    flex-grow: 3;
+.popular-div > div:last-child {
+    flex-basis: 65%;
 }
 </style>
